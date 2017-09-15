@@ -1,0 +1,25 @@
+{
+  "name": "my",
+  "description": "My start Template with git/node/npm/gulp/bower",
+  "main": "index.js",
+  "authors": [
+    "Orest Tsyaputa"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "components-font-awesome": "^4.7.0",
+    "bootstrap-grid-only": "^1.0.0",
+    "animate.css": "^3.5.2",
+    "reset-css": "^2.2.1"
+  }
+}

@@ -1,0 +1,6 @@
+.idea
+*.sublime-workspace
+*.sublime-project
+pub/static
+lib
+node_modules

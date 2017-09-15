@@ -1,0 +1,280 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+$left: 3px solid $accent, 100%, 2px, 0, -5px, 0px solid $accent
+$bottom: 0px solid $accent, 2px, 100%, -5px, 0, 3px solid $accent
+
+@mixin borderSide($border-left, $height, $width, $bottom, $left, $border-bottom)
+	border-left: $border-left
+	border-bottom: $border-bottom
+	position: relative
+	&::after
+		position: absolute
+		content: ''
+		height: $height
+		width: $width
+		bottom: $bottom
+		left: $left
+		background-color: lighten($accent, 10%)
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	color: #000
+//Header
+.header
+	position: relative
+	box-sizing: border-box
+	height: 640px
+	background: #f1f1f1 url("../img/background.jpg") no-repeat center center
+	background-size: cover
+	padding-top: 20px
+	.logo
+		padding-left: 0
+		img
+			height: 50px
+	.nav ul
+		list-style: none
+		margin: 0
+		padding: 0
+		text-align: center
+		font-size: 0px
+		li
+			display: inline-block
+			padding: 0 20px
+			border-bottom: 2px solid $accent
+			a
+				position: relative
+				font-size: 12px
+				font-weight: bold
+				line-height: 50px
+				text-decoration: none
+				color: #fff
+				transition: 0.3s color ease
+				&.active
+					color: $accent
+				&.active:after
+					content: ""
+					position: absolute
+					width: 0
+					height: 0
+					top: 100%
+					left: 50%
+					margin-left: -7px
+					margin-top: 14px
+					border-left: 7px solid transparent
+					border-right: 7px solid transparent
+					border-bottom: 7px solid $accent
+	.nav-icons
+		padding-right: 0
+		a
+			float: right
+			margin: 0 10px
+		i
+			line-height: 50px
+			color: #fff
+			transition: 0.3s color ease
+			&:hover
+				color: $accent
+	.container
+		position: relative
+		height: 100%
+	.welcome
+		position: absolute
+		right: 150px
+		top: 50%
+		transform: translateY(-50%)
+		.button
+			animation-delay: 0.7s
+		.text
+			color: #fff
+			position: relative	
+			.num
+				display: block
+				font-size: 200px
+			.title
+				text-align: right
+				margin-top: -20px
+				display: block
+				font-size: 54px
+			.percent
+				font-size: 80px
+				position: absolute
+				left: 320px
+				top: 45px
+				color: $accent
+			.success
+				font-size: 40px
+				position: absolute
+				right: 2px
+				top: 120px
+	
+.button
+	display: inline-block
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	transition: background-color .1s ease
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: darken($accent, 10%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 10%)
+		&::after
+			opacity: .32
+
+//About Us
+.section-title
+	text-align: center
+	div
+		display: inline-block
+		padding: 20px 20px 10px
+		margin-top: 90px
+		margin-bottom: 75px
+		font-size: 50px
+		font-weight: 700
+		background-color: $accent
+		background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
+		transform: rotate(355deg)
+		// background: url("../img/RectangleGreen.png") no-repeat center center
+		a
+			display: inline-block
+			text-decoration: none
+			color: #fff
+			transform: rotate(5deg)
+.about
+	.avatar img
+		position: relative
+		margin: 66px 0 0 66px
+		width: 450px
+		height: 450px
+		box-shadow: -66px -66px 0px 0px $accent
+		border: 5px solid rgba(255, 255, 255, 0.5)
+	.info
+		h1
+			color: $dark
+			font-size: 30px
+			font-weight: 700
+			margin: 0
+			margin-bottom: 60px
+			span
+				@include borderSide($bottom...)
+				padding-bottom: 15px
+		p
+			margin: 0
+			margin-bottom: 45px
+			color: $grey
+			font-weight: 700
+			line-height: 25px
+		.missions
+			margin: 0
+			margin-bottom: 45px
+			@include borderSide($left...)
+			left: 2px
+			padding-left: 15px
+			font-size: 20px
+			color: $grey
+			span
+				font-weight: 800
+				color: $dark
+		.browse
+			display: inline-block
+			color: $dark
+			font-size: 18px
+			box-sizing: border-box
+			font-weight: 700
+			padding: 12px 20px
+			text-decoration: none
+			border: 3px solid #393c41
+			i
+				padding-right: 8px
+	.skills
+		text-align: center
+		margin-top: 100px
+		i
+			display: inline-block
+			height: 100px
+			width: 100px
+			font-size: 28px
+			line-height: 96px
+			color: $accent
+			border: 2px solid $accent
+			border-radius: 50%
+			box-sizing: border-box
+			transition: 0.3s background ease, 0.3s color ease
+			&:hover, &.active
+				color: #fff
+				background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
+				cursor: pointer
+		h2
+			margin: 0
+			margin-top: 30px
+			font-size: 20px
+			font-weight: 700
+			color: $dark
+		p
+			margin: 0
+			margin-top: 30px
+			font-size: 16px
+			font-weight: 400
+			color: $grey
+
+@import "media" // alwayse in the END
