@@ -6,3 +6,4 @@ lib
 node_modules
 vendor
 .mlab.access
+.phpintel
