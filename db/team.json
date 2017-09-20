@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Orest Tsyputa",
+		"src": "http://google.com",
+		"description": "Ryzyj 4uwak",
+		"img": "img/avatar1.jpg"
+	},
+	{
+		"name": "Alex Yeremenko",
+		"src": "http://google.com",
+		"description": "Ahujennyj 4uwak",
+		"img": "img/avatar2.jpg"
+	},
+	{
+		"name": "Andriy Tsyputa",
+		"src": "http://google.com",
+		"description": "Ne poniatno sho tut robyt",
+		"img": "img/avatar3.jpg"
+	},
+	{
+		"name": "Vlad Mykytsey",
+		"src": "http://google.com",
+		"description": "Z nym ahujenno buhaty",
+		"img": "img/avatar4.jpg"
+	}
+]
