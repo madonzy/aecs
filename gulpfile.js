@@ -20,6 +20,7 @@ var gulp = require('gulp'),
 gulp.task('js', function() {
     return gulp.src([
             'lib/jquery/dist/jquery.min.js',
+            'lib/owl.carousel/dist/owl.carousel.min.js',
             // add new css libs
             'js/main.js' // alwayse in the end
         ])
@@ -60,7 +61,7 @@ gulp.task('sass', function() {
 
 gulp.task('watch', ['sass', 'js', 'browser-sync', 'imagemin'], function() {
     gulp.watch('sass/**/*.sass', ['sass']);
-    gulp.watch(['lib/**/*.js', 'js/common.js'], ['js']);
+    gulp.watch(['lib/**/*.js', 'js/main.js'], ['js']);
     gulp.watch('pub/*.html', browserSync.reload);
     var buildFonts = gulp.src([
         'lib/components-font-awesome/fonts/**/*',
