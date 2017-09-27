@@ -21,11 +21,12 @@ gulp.task('js', function() {
     return gulp.src([
             'lib/jquery/dist/jquery.min.js',
             'lib/owl.carousel/dist/owl.carousel.min.js',
+            'lib/magnific-popup/dist/jquery.magnific-popup.min.js',
             // add new css libs
             'js/main.js' // alwayse in the end
         ])
         .pipe(concat('main.min.js'))
-        .pipe(uglify()) // minimize all js
+        // .pipe(uglify()) // minimize all js
         .pipe(gulp.dest('pub/static/js'))
         .pipe(browserSync.reload({ stream: true }));
 });
@@ -75,10 +76,15 @@ gulp.task('imagemin', function() {
         .pipe(cache(imagemin()))
         .pipe(gulp.dest('pub/static/img'));
 });
+gulp.task('fonts', function() {
+    return gulp.src([
+        'lib/components-font-awesome/fonts/**/*',
+    ]).pipe(gulp.dest('pub/static/fonts'));
+});
 
 // THE END
 
-gulp.task('build', ['remove', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['remove', 'imagemin', 'sass', 'js', 'fonts'], function() {
 
 
 });

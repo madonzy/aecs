@@ -5,6 +5,10 @@
 $left: 3px solid $accent, 100%, 2px, 0, -5px, 0px solid $accent
 $bottom: 0px solid $accent, 2px, 100%, -5px, 0, 3px solid $accent
 
+@mixin boxShadow
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	
+
 @mixin borderSide($border-left, $height, $width, $bottom, $left, $border-bottom)
 	border-left: $border-left
 	border-bottom: $border-bottom
@@ -57,19 +61,51 @@ body
 .header
 	position: relative
 	box-sizing: border-box
-	height: 640px
+	height: 100%
+	width: 100%
+	margin-bottom: 40px
 	background: #f1f1f1 url("../img/background.jpg") no-repeat center center
 	background-size: cover
 	padding-top: 20px
-	.logo
-		padding-left: 0
-		img
+	.logo img
 			height: 50px
-	.nav ul
-		list-style: none
-		margin: 0
-		padding: 0
-		text-align: center
+	.language
+		float: right
+		margin-left: 40px
+		li a
+			width: 150px
+			padding: 16px 0
+			display: inline-block
+			font-size: 16px
+			position: relative
+			font-weight: bold
+			color: #fff
+			text-align: center
+			text-decoration: none
+			border: 1px solid #fff
+			border-radius: 7px
+			transition: 0.3s color ease, 0.3s border-color ease
+			&:hover
+				color: $accent
+				border-color: $accent
+				z-index: 2
+		.selected a:after
+			content: "\f107"
+			font-family: FontAwesome
+			position: absolute
+			right: 20px
+		.selected a:before
+			content: "\f0ac"
+			font-family: FontAwesome
+			position: absolute
+			left: 20px
+			// margin-top: -1px
+		li:last-child
+			display: none
+			margin-top: -1px
+
+	.nav
+		float: right
 		font-size: 0px
 		li
 			display: inline-block
@@ -77,11 +113,12 @@ body
 			border-bottom: 2px solid $accent
 			a
 				position: relative
-				font-size: 12px
+				font-size: 16px
 				font-weight: bold
 				line-height: 50px
 				text-decoration: none
 				color: #fff
+				transition: 0.3s color ease
 				transition: 0.3s color ease
 				&.active
 					color: $accent
@@ -93,21 +130,11 @@ body
 					top: 100%
 					left: 50%
 					margin-left: -7px
-					margin-top: 14px
+					margin-top: 12px
 					border-left: 7px solid transparent
 					border-right: 7px solid transparent
 					border-bottom: 7px solid $accent
-	.nav-icons
-		padding-right: 0
-		a
-			float: right
-			margin: 0 10px
-		i
-			line-height: 50px
-			color: #fff
-			transition: 0.3s color ease
-			&:hover
-				color: $accent
+	
 	.container
 		position: relative
 		height: 100%
@@ -185,16 +212,16 @@ body
 .section-title
 	text-align: center
 	div
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 		display: inline-block
 		padding: 20px 20px 10px
-		margin-top: 90px
-		margin-bottom: 75px
+		margin-top: 40px
+		margin-bottom: 80px
 		font-size: 50px
 		font-weight: 700
 		background-color: $accent
 		background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
 		transform: rotate(355deg)
-		// background: url("../img/RectangleGreen.png") no-repeat center center
 		a
 			display: inline-block
 			text-decoration: none
@@ -244,12 +271,14 @@ body
 			padding: 12px 20px
 			text-decoration: none
 			border: 3px solid #393c41
+			@include boxShadow
 			i
 				padding-right: 8px
 	.skills
 		text-align: center
-		margin-top: 100px
+		margin-top: 80px
 		i
+			@include boxShadow
 			display: inline-block
 			height: 100px
 			width: 100px
@@ -277,216 +306,143 @@ body
 			font-weight: 400
 			color: $grey
 .recent-works
-	margin-top: 100px
-	margin-bottom: 100px
-.project-item 
-	width: 1170px
-	margin: 0 auto
-	position: relative
-	background-color: #FFF
-	margin-bottom: 50px
-.project-slider-wrapper 
-	position: relative
-	z-index: 1
-	transition: width 0.4s
-	transform: rotateZ(0)
-	backface-visibility: hidden
-	will-change: width
-.project-slider-wrapper 
-	width: 50%
-.project-slider-active .project-slider-wrapper 
-	width: 100%
-.project-slider
-	position: relative
-	z-index: 1
-	overflow: hidden
-	cursor: pointer
-	&::after
-		content: ""
-		display: block
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		background: rgba(81, 62, 93, 0.4) url("../img/cd-icon-zoom.svg") no-repeat center center
-		z-index: 4
-		opacity: 0
-		transition: opacity 0.2s
-	&:hover::after 
-		opacity: 1
-	.project-slider-active &::after
-		display: none
-	li
-		position: absolute
-		top: 0
-		left: 0
-		height: 100%
-		width: 100%
-		transform: rotateX(100%)
-		transition: transform 0.3s
+	margin-top: 40px
+	margin-bottom: 40px
+	.project-img 
 		img
-			display: block
+			transition: 0.3s
 			width: 100%
-		&.selected
 			position: relative
-			z-index: 2
-			transform: rotateX(0)
-		&.move-left
-			transform: rotateX(-100%)
-
-
-.project-slider-navigation li, .project-slider-pagination
-	opacity: 0
-	visibility: hidden
-	transition: opacity 0.4s 0s, visibility 0s 0.4s
-	.project-slider-active & 
-		opacity: 1
-		visibility: visible
-		transition: opacity 0.4s 0.4s, visibility 0s 0.4s
-.project-slider-navigation li
-	position: absolute
-	z-index: 2
-	top: 50%
-	bottom: auto
-	transform: translateY(-50%)
-	&:first-of-type
-		left: 10px
-	&:last-of-type
-		right: 10px
-	a
-		display: block
-		width: 48px
-		height: 48px
-		background: url("../img/cd-icon-arrow.svg") no-repeat center center
-		overflow: hidden
-		text-indent: 100%
-		white-space: nowrap
-		&.inactive
-			opacity: 0
-			visibility: hidden
-			transition: opacity 0.2s 0s, visibility 0s 0.2s
-		&:hover 
-			opacity: .7
-
-	&:first-of-type a
-		transform: rotate(180deg)
-	&:first-child 
-		left: 30px
-	&:last-child 
-		right: 30px
-.project-slider-pagination
-	position: absolute
-	z-index: 2
-	bottom: 30px
-	left: 50%
-	right: auto
-	transform: translateX(-50%)
-	visibility: hidden
-	&::after
-		content: ""
-		display: table
-		clear: both
-	.touch &
-		visibility: hidden
-	li
-		display: inline-block
-		float: left
-		margin: 0 5px
-		&.selected a
-			background: #f5f4f3
-	a
-		display: block
-		height: 12px
-		width: 12px
-		border-radius: 50%
-		border: 1px solid #f5f4f3
-		background-color: rgba(255, 255, 255, 0)
-		overflow: hidden
-		text-indent: 100%
-		white-space: nowrap
-.project-slider-wrapper .project-close
-	display: none
-	position: absolute
-	z-index: 2
-	top: 30px
-	right: 30px
-	width: 48px
-	height: 48px
-	background: url("../img/cd-icon-close.svg") no-repeat center center
-	overflow: hidden
-	white-space: nowrap
-	visibility: hidden
-	text-indent: 100%
-	opacity: 0
-	transition: transform 0.3s 0s, visibility 0s 0.4s
-	.project-slider-active &
-		visibility: visible
-		opacity: 1
-		transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.4s 0.4s
-	.project-slider-active &:hover
-		transform: scale(1.2)
-.project-slider-wrapper .project-close 
-	display: block
-
-.project-item-info 
-	box-sizing: border-box
-	padding: 50px 5% 
-.project-item-info h2, .project-item-info p 
-	max-width: 480px 
-.project-item-info h2 
-	font-size: 2.4rem
-	font-weight: bold 
-.project-item-info p 
-	line-height: 1.6
-	margin: 1em 0
-	color: #666666 
-.project-item-info 
-	position: absolute
-	width: 50%
-	top: 0
-	right: 0
-	padding: 60px 60px 0
-	margin: 0  
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+		div
+			position: relative
+			&:after
+				content: ""
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background: rgba(0, 0, 0, 0.4) url("../img/cd-icon-zoom.svg") no-repeat center center
+				z-index: 4
+				opacity: 0
+				transition: opacity 0.2s
+			&:hover::after 
+				opacity: 1
+	.project-info
+		h2
+			color: $dark
+			font-size: 30px
+			font-weight: 700
+			margin: 0
+			margin-bottom: 60px
+			.underline
+				@include borderSide($bottom...)
+				padding-bottom: 15px
+		
+.owl-carousel
+	padding: 0 80px
+	.owl-stage
+		padding-bottom: 15px
 .owl-theme .owl-dots .owl-dot
 	span
 		background-color: $grey
 	&.active span, &:hover span 
 		background: $accent
 .owl-theme .owl-nav [class*='owl-']
-	background-color: $grey
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	color: $grey
+	background-color: #fff
+	transition: 0.3s color ease
+	i
+		font-size: 50px
+	&.disabled:hover
+		color: $grey
+	&.owl-prev
+		left: 20px
+	&.owl-next	
+		right: 20px
 	&:hover
-		background: $accent
+		color: $accent
+		background-color: #fff
 .owl-item
+	// max-width: 300px
+	cursor: pointer
 	border: 4px solid #fff
+	transition: .3s
+	&:hover
+		@include boxShadow
+		// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	// &:hover :after
+	// 	content: ''
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	width: 100%
+	// 	height: 100%
+	// 	background-color: rgba($dark, .3)
 	.project-sm-info
 		position: absolute
-		display: inline-block
+		display: none
 		top: 0
 		left: 0
 		background-color: rgba($dark, .6)
 		width: 100%
 		height: 100%
-		padding-top: 30%
+		padding-top: 45%
 		text-align: center
-		opacity: 0
-		transition: opacity 0.2s
-		// cursor: pointer
 		h2
 			font-size: 36px
 			color: #fff
 			font-weight: bold
 			margin-bottom: 20px
-		p.button
-			padding: 15px 20px
-			// color: #fff
-			// display: inline-block
-			// padding: 5px 10px
-			// font-size: 20px
-			// background-color: $accent
-			// border: 2px solid #fff
+		
 	&.center
 		border: 4px solid $accent
+		// &:hover :after
+		// 	display: none
 		.project-sm-info
+			display: inline-block
+
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.2s ease-in-out 
+		transform: scale(0.8) 
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-ready 
+		.mfp-with-anim 
 			opacity: 1
+			transform: scale(1) 
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing 
+		.mfp-with-anim 
+			transform: scale(0.8) 
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+.mfp-arrow
+	opacity: 1
+	&.mfp-arrow-right
+		&:after
+			border-left-color: rgba($grey, 0.75)
+			transition: .2s
+		&:hover:after
+			border-left-color: rgba($accent, 0.9)
+			
+
+	&.mfp-arrow-left
+		&:after
+			border-right-color: rgba($grey, .75)
+			transition: .2s
+		&:hover:after
+			border-right-color: rgba($accent, .9)
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close
+	cursor: pointer
 @import "media" // alwayse in the END
