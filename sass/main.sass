@@ -37,6 +37,8 @@ $bottom: 0px solid $accent, 2px, 100%, -5px, 0, 3px solid $accent
 *:-ms-input-placeholder
 	color: #666
 	opacity: 1
+*:focus
+	outline: none
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
@@ -63,110 +65,121 @@ body
 	box-sizing: border-box
 	height: 100%
 	width: 100%
-	margin-bottom: 40px
 	background: #f1f1f1 url("../img/background.jpg") no-repeat center center
 	background-size: cover
-	padding-top: 20px
-	.logo img
-			height: 50px
-	.language
-		float: right
-		margin-left: 40px
-		li a
-			width: 150px
-			padding: 16px 0
-			display: inline-block
-			font-size: 16px
-			position: relative
-			font-weight: bold
-			color: #fff
-			text-align: center
-			text-decoration: none
-			border: 1px solid #fff
-			border-radius: 7px
-			transition: 0.3s color ease, 0.3s border-color ease
-			&:hover
-				color: $accent
-				border-color: $accent
-				z-index: 2
-		.selected a:after
-			content: "\f107"
-			font-family: FontAwesome
-			position: absolute
-			right: 20px
-		.selected a:before
-			content: "\f0ac"
-			font-family: FontAwesome
-			position: absolute
-			left: 20px
-			// margin-top: -1px
-		li:last-child
-			display: none
-			margin-top: -1px
+	.topline
+		position: fixed
+		padding: 9px 0 
+		width: 100%
+		background-color: rgba($dark, 0)
+		z-index: 100
+		transition: 0.3s background-color ease
+		&.sticky
+			background-color: rgba($dark, 0.7)
 
-	.nav
-		float: right
-		font-size: 0px
-		li
-			display: inline-block
-			padding: 0 20px
-			border-bottom: 2px solid $accent
-			a
-				position: relative
+		.logo 
+			height: 54px
+			img
+				height: 54px
+		.language
+			float: right
+			margin-left: 40px
+			li a
+				width: 150px
+				padding: 16px 0
+				display: inline-block
 				font-size: 16px
+				position: relative
 				font-weight: bold
-				line-height: 50px
-				text-decoration: none
 				color: #fff
-				transition: 0.3s color ease
-				transition: 0.3s color ease
-				&.active
+				text-align: center
+				text-decoration: none
+				border: 1px solid #fff
+				border-radius: 7px
+				transition: 0.3s color ease, 0.3s border-color ease
+				&:hover
 					color: $accent
-				&.active:after
-					content: ""
-					position: absolute
-					width: 0
-					height: 0
-					top: 100%
-					left: 50%
-					margin-left: -7px
-					margin-top: 12px
-					border-left: 7px solid transparent
-					border-right: 7px solid transparent
-					border-bottom: 7px solid $accent
+					border-color: $accent
+					z-index: 2
+			.selected a:after
+				content: "\f107"
+				font-family: FontAwesome
+				position: absolute
+				right: 20px
+			.selected a:before
+				content: "\f0ac"
+				font-family: FontAwesome
+				position: absolute
+				left: 20px
+				// margin-top: -1px
+			li:last-child
+				display: none
+				margin-top: -1px
+
+		.nav
+			float: right
+			font-size: 0px
+			li
+				display: inline-block
+				padding: 0 20px
+				border-bottom: 2px solid $accent
+				a
+					position: relative
+					font-size: 16px
+					font-weight: bold
+					line-height: 50px
+					text-decoration: none
+					color: #fff
+					transition: 0.3s color ease
+					&.active, &:hover
+						color: $accent
+					&.active:after
+						content: ""
+						position: absolute
+						width: 0
+						height: 0
+						top: 100%
+						left: 50%
+						margin-left: -7px
+						margin-top: 12px
+						border-left: 7px solid transparent
+						border-right: 7px solid transparent
+						border-bottom: 7px solid $accent
 	
-	.container
-		position: relative
+	.welcome-wrapper
 		height: 100%
 	.welcome
-		position: absolute
-		right: 150px
-		top: 50%
-		transform: translateY(-50%)
+		height: 100%
+		display: flex
+		flex-flow: column wrap
+		justify-content: center
+		align-items: center
 		.button
 			animation-delay: 0.7s
 		.text
 			color: #fff
-			position: relative	
 			.num
 				display: block
-				font-size: 200px
-			.title
-				text-align: right
-				margin-top: -20px
-				display: block
-				font-size: 54px
+				width: 100%
+				position: relative
+				font-size: 12rem
 			.percent
-				font-size: 80px
+				display: inline-block
 				position: absolute
-				left: 320px
-				top: 45px
+				font-size: 5rem
+				line-height: 12rem
 				color: $accent
 			.success
 				font-size: 40px
 				position: absolute
 				right: 2px
-				top: 120px
+				top: 115px
+			.title
+				text-align: right
+				// margin-top: -20px
+				display: block
+				width: 100%
+				font-size: 54px
 	
 .button
 	display: inline-block
@@ -215,7 +228,7 @@ body
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 		display: inline-block
 		padding: 20px 20px 10px
-		margin-top: 40px
+		margin-top: 80px
 		margin-bottom: 80px
 		font-size: 50px
 		font-weight: 700
@@ -228,6 +241,7 @@ body
 			color: #fff
 			transform: rotate(5deg)
 .about
+	// padding-top: 40px
 	.avatar img
 		position: relative
 		margin: 66px 0 0 66px
@@ -298,6 +312,7 @@ body
 			margin-top: 30px
 			font-size: 20px
 			font-weight: 700
+			// font-family: JosefinSans
 			color: $dark
 		p
 			margin: 0
@@ -306,7 +321,7 @@ body
 			font-weight: 400
 			color: $grey
 .recent-works
-	margin-top: 40px
+	// padding-top: 40px
 	margin-bottom: 40px
 	.project-img 
 		img
@@ -375,15 +390,6 @@ body
 	transition: .3s
 	&:hover
 		@include boxShadow
-		// box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-	// &:hover :after
-	// 	content: ''
-	// 	position: absolute
-	// 	top: 0
-	// 	left: 0
-	// 	width: 100%
-	// 	height: 100%
-	// 	background-color: rgba($dark, .3)
 	.project-sm-info
 		position: absolute
 		display: none
@@ -445,4 +451,81 @@ body
 			border-right-color: rgba($accent, .9)
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close
 	cursor: pointer
+
+.our-team
+	.employee
+		// background-color: red
+		margin-bottom: 40px
+		.employee-img
+			display: inline-block
+			position: relative
+			width: 45.5%
+			float: left
+			font-size: 0
+			@include boxShadow
+			img
+				width: 100%
+				height: 100%
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				transition: 0.3s background-color ease
+				background-color: rgba($accent, .0)
+			&:hover
+				&:after
+					background-color: rgba($accent, .3)
+				.contacts
+					opacity: 1
+
+			.contacts
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+				right: 0
+				text-align: center
+				transition: 0.3s opacity ease
+				opacity: 0
+				z-index: 9
+				i
+					color: #fff
+					background-color: $accent
+					width: 40px
+					text-align: center
+					font-family: FontAwesome
+					font-size: 14px
+					line-height: 40px
+					margin: 0 5px
+					transition: .3s
+					&:hover
+						@include boxShadow
+						transform: scale(1.2)
+
+		.employee-info
+			float: right
+			display: inline-block
+			width: 50%
+			h2
+				font-size: 20px
+				font-weight: 700
+				color: $dark
+				padding-top: 22px
+				padding-bottom: 10px
+			span
+				display: inline-block
+				font-size: 16px
+				font-weight: 700
+				color: $grey	
+				padding-bottom: 22px
+			p
+				font-size: 16px
+				color: $grey
+
+				font-weight: 400
+				line-height: 20px
+
 @import "media" // alwayse in the END

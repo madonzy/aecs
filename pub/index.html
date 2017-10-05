@@ -8,10 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:image" content="path/to/image.jpg">
-    <link rel="shortcut icon" href="static/img/favicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="static/img/favicon/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/img/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/img/favicon/apple-touch-icon-114x114.png">
+    <!-- FAICONS -->
+    <link rel="shortcut icon" href="static/img/favicons/qwe.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicons/apple-touch-icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicons/apple-touch-icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/img/favicons/apple-touch-icon-96x96.png">
+    <link rel="apple-touch-icon" href="static/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="icon" sizes="128x128" href="static/img/favicons/apple-touch-icon-128x128.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="static/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="static/img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/favicons/apple-touch-icon-180x180.png">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
@@ -31,135 +37,221 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="col-md-2 logo">
-                <img src="static/img/logo2.svg" alt="logo">
-            </div>
-            <div class="col-md-10">
-                <ul class="language">
-                    <li class="selected" data-lang="pl"><a href="#">Polski</a></li>
-                    <li data-lang="en"><a href="#">English</a></li>
-                </ul>
-                <ul class="nav">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-push-6 col-md-6 welcome">
-                <div class="text animated fadeInRight">
-                    <span class="num">100</span>
-                    <span class="percent">%</span>
-                    <span class="success">Success</span>
-                    <span class="title">Advanced E-commerce Solutions</span>
+    <div id="home" class="header target">
+        <div class="topline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 logo">
+                        <img src="static/img/logo2.svg" alt="logo">
+                    </div>
+                    <div class="col-md-10 clearfix">
+                        <ul class="language">
+                            <li class="selected" data-lang="pl"><a href="#">Polski</a></li>
+                            <li data-lang="en"><a href="#">English</a></li>
+                        </ul>
+                        <ul class="nav">
+                            <li><a href="#home" class="active">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#our-team">Our Team</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <a class="button animated fadeIn">Read more</a>
+            </div>
+        </div>
+        <div class="container welcome-wrapper">
+            <div class="row welcome-wrapper">
+                <div class="col-md-push-6 col-md-6 welcome">
+                    <div class="text animated fadeInRight">
+                        <div class="num">100
+                            <span class="percent">%</span>
+                            <span class="success">Success</span>
+                        </div>
+                        <span class="title">Advanced E-commerce Solutions</span>
+                        <a class="button animated fadeIn">Read more</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="about" class="container about">
+    <div id="about" class="about target">
         <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-title">
+                    <div><a href="#about">About Us</a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 avatar">
+                    <img src="static/img/avatarka1.jpg" alt="avatarka">
+                </div>
+                <div class="col-md-6 info">
+                    <h1><span>Hello!</span> We’re a Creative Agency</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ipsum illo voluptatum ratione nemo nobis in unde culpa! Sed temporibus ducimus qui possimus excepturi, repellat facilis, aspernatur mollitia nulla, accusantium voluptatum, velit soluta. Id deleniti soluta repudiandae optio quod pariatur eius cum totam excepturi nihil ab maxime tempore atque autem, perspiciatis accusamus dicta, molestiae odit reprehenderit laudantium eligendi. Delectus porro magnam aut cupiditate harum, architecto corporis laborum doloribus temporibus, quos.</p>
+                    <div class="missions">
+                        <span>Mission</span> - we deliver uniqueness and quality
+                        <br>
+                        <span>Skills</span> - delivering fast and excellent results
+                        <br>
+                        <span>Clients</span> - satisfied clients thanks to our experience
+                        <br>
+                    </div>
+                    <a href="#" class="browse"><i class="fa fa-folder  animated bounce" aria-hidden="true"></i>Browse our works</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 skills">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                    <h2>Photography</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                </div>
+                <div class="col-md-4 skills">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                </div>
+                <div class="col-md-4 skills">
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <h2>Marketing</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio" class="container recent-works target">
+        <div class="row">
             <div class="col-md-12 section-title">
-                <div><a href="#about">About Us</a></div>
-            </div>
-            <div class="col-md-6 avatar">
-                <img src="static/img/avatarka1.jpg" alt="avatarka">
-            </div>
-            <div class="col-md-6 info">
-                <h1><span>Hello!</span> We’re a Creative Agency</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ipsum illo voluptatum ratione nemo nobis in unde culpa! Sed temporibus ducimus qui possimus excepturi, repellat facilis, aspernatur mollitia nulla, accusantium voluptatum, velit soluta. Id deleniti soluta repudiandae optio quod pariatur eius cum totam excepturi nihil ab maxime tempore atque autem, perspiciatis accusamus dicta, molestiae odit reprehenderit laudantium eligendi. Delectus porro magnam aut cupiditate harum, architecto corporis laborum doloribus temporibus, quos.</p>
-                <div class="missions">
-                    <span>Mission</span> - we deliver uniqueness and quality
-                    <br>
-                    <span>Skills</span> - delivering fast and excellent results
-                    <br>
-                    <span>Clients</span> - satisfied clients thanks to our experience
-                    <br>
-                </div>
-                <a href="#" class="browse"><i class="fa fa-folder  animated bounce" aria-hidden="true"></i>Browse our works</a>
+                <div><a href="#portfolio">Recent works</a></div>
             </div>
         </div>
-        <div class="container">
-            <div class="col-md-4 skills">
-                <i class="fa fa-camera" aria-hidden="true"></i>
-                <h2>Photography</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+        <div class="row">
+            <div class="col-md-6 project-img">
+                <a href="#0" class="image-popups" data-effect="mfp-zoom-in">
+                    <div>
+                        <img src="static/img/Projects/project1.jpg" alt="Project1">
+                    </div>
+                </a>
             </div>
-            <div class="col-md-4 skills">
-                <i class="fa fa-desktop active" aria-hidden="true"></i>
-                <h2>Web Design</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+            <div class="col-md-6 project-info">
+                <h2 class="firstWordU">PROJECT Name here!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo est autem non ullam nostrum, doloremque modi in cumque corporis molestiae animi quidem adipisci accusamus expedita suscipit sunt eius perferendis sapiente debitis a. Architecto repudiandae facilis amet debitis quibusdam quasi saepe! Ut ratione, iusto voluptatum numquam quis! Harum, deleniti, ipsa officia voluptates tempora aperiam perferendis esse odio facere, doloremque at blanditiis! Vero eaque totam, vel perferendis temporibus laudantium ea porro, in ex blanditiis sunt corporis velit laboriosam incidunt illum. Ducimus ea, praesentium sint, repudiandae alias animi eligendi vel eaque tempora laborum, qui ipsum molestias mollitia deserunt error a ut tenetur perferendis exercitationem quas, provident excepturi dolor harum repellat! Nulla temporibus doloremque nostrum laboriosam quibusdam molestias nobis adipisci amet ipsa laborum debitis ducimus maxime, eveniet consequatur perferendis reprehenderit animi eum ullam saepe, deleniti quaerat harum optio a consectetur? Eum totam quis in omnis consequatur officiis dolorum inventore possimus unde quo neque, eius, illum obcaecati maiores vel nostrum harum non est dolore earum assumenda, quaerat ipsam. Eos, maxime, officia? Facilis, fugiat officia qui, reprehenderit at soluta nemo dolorem tenetur illum sunt aut quos eligendi dolore saepe excepturi a magnam, aspernatur necessitatibus. Accusantium deserunt pariatur, enim molestias doloremque facilis sit consectetur voluptas, mollitia sint quo. Illum eveniet, ullam porro dolore no</p>
             </div>
-            <div class="col-md-4 skills">
-                <i class="fa fa-comments" aria-hidden="true"></i>
-                <h2>Marketing</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
-            </div>
-        </div>
-    </div>
-    <div id="portfolio" class="container recent-works">
-        <div class="section-title">
-            <div><a href="#">Recent works</a></div>
-        </div>
-        <div class="col-md-6 project-img">
-            <a href="#0" class="image-popups" data-effect="mfp-zoom-in">
-                <div>
-                <img src="static/img/project1.jpg" alt="Project1">
-                </div>
-            </a>
-        </div>
-        <div class="col-md-6 project-info">
-            <h2 class="firstWordU">PROJECT Name here!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo est autem non ullam nostrum, doloremque modi in cumque corporis molestiae animi quidem adipisci accusamus expedita suscipit sunt eius perferendis sapiente debitis a. Architecto repudiandae facilis amet debitis quibusdam quasi saepe! Ut ratione, iusto voluptatum numquam quis! Harum, deleniti, ipsa officia voluptates tempora aperiam perferendis esse odio facere, doloremque at blanditiis! Vero eaque totam, vel perferendis temporibus laudantium ea porro, in ex blanditiis sunt corporis velit laboriosam incidunt illum. Ducimus ea, praesentium sint, repudiandae alias animi eligendi vel eaque tempora laborum, qui ipsum molestias mollitia deserunt error a ut tenetur perferendis exercitationem quas, provident excepturi dolor harum repellat! Nulla temporibus doloremque nostrum laboriosam quibusdam molestias nobis adipisci amet ipsa laborum debitis ducimus maxime, eveniet consequatur perferendis reprehenderit animi eum ullam saepe, deleniti quaerat harum optio a consectetur? Eum totam quis in omnis consequatur officiis dolorum inventore possimus unde quo neque, eius, illum obcaecati maiores vel nostrum harum non est dolore earum assumenda, quaerat ipsam. Eos, maxime, officia? Facilis, fugiat officia qui, reprehenderit at soluta nemo dolorem tenetur illum sunt aut quos eligendi dolore saepe excepturi a magnam, aspernatur necessitatibus. Accusantium deserunt pariatur, enim molestias doloremque facilis sit consectetur voluptas, mollitia sint quo. Illum eveniet, ullam porro dolore no</p>
         </div>
     </div>
     <section class="owl-carousel owl-theme">
         <div>
-            <img src="static/img/project6.jpg">
+            <img src="static/img/Projects/project6.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Oman</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project2.jpg">
+            <img src="static/img/Projects/project2.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Armenia</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project3.jpg">
+            <img src="static/img/Projects/project3.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Vanuatu</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project4.jpg">
+            <img src="static/img/Projects/project4.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Libya</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project5.jpg">
+            <img src="static/img/Projects/project5.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Somalia</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project1.jpg">
+            <img src="static/img/Projects/project1.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">Uganda</h2>
             </div>
         </div>
         <div>
-            <img src="static/img/project6.jpg">
+            <img src="static/img/Projects/project6.jpg">
             <div class="project-sm-info animated fadeIn">
                 <h2 class="animated fadeInUp">USA</h2>
             </div>
         </div>
     </section>
+    <div id="our-team" class="container our-team target">
+        <div class="row">
+            <div class="col-md-12 section-title">
+                <div><a href="#our-team">Our Team</a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 employee">
+                <div class="employee-img">
+                    <img src="static/img/Employees/person1.jpg" alt="employee-img">
+                    <div class="contacts">
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="employee-info">
+                    <h2>Elizabeth Bennet</h2>
+                    <span>Graphic Designer</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores sapiente, suscipit exercitationem id molestias sed vitae at nemo sit deserunt hic reiciendis et porro voluptate ducimus earum voluptas aut omnis.</p>
+                </div>
+            </div>
+            <div class="col-md-6 employee">
+                <div class="employee-img">
+                    <img src="static/img/Employees/person2.jpg" alt="employee-img">
+                     <div class="contacts">
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="employee-info">
+                    <h2>Leon Pesner</h2>
+                    <span>Graphic Designer</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto ducimus asperiores distinctio commodi quam, eligendi neque, accusamus cum nihil, dolore, porro quaerat architecto veniam unde. Molestiae, aspernatur. Rem sunt, sequi.</p>
+                </div>
+            </div>
+            <div class="col-md-6 employee">
+                <div class="employee-img">
+                    <img src="static/img/Employees/person3.jpg" alt="employee-img">
+                     <div class="contacts">
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="employee-info">
+                    <h2>Irma Rosse</h2>
+                    <span>Graphic Designer</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a hic totam rem cum quia distinctio quam eos adipisci et cumque esse asperiores doloribus, obcaecati, tempora saepe optio vel!</p>
+                </div>
+            </div>
+            <div class="col-md-6 employee">
+                <div class="employee-img">
+                    <img src="static/img/Employees/person4.jpg" alt="employee-img">
+                     <div class="contacts">
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="employee-info">
+                    <h2>September Pursel</h2>
+                    <span>Graphic Designer</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat inventore cum expedita cumque accusamus quae dolore! Dignissimos fugiat cupiditate adipisci facilis reprehenderit cum error repellendus excepturi, ipsum, distinctio, iusto nam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <link rel="stylesheet" href="static/css/main.min.css">
     <script src="static/js/main.min.js"></script>
 </body>
