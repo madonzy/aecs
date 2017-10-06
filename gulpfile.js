@@ -21,6 +21,7 @@ gulp.task('js', function() {
     return gulp.src([
             'lib/jquery/dist/jquery.min.js',
             'lib/owl.carousel/dist/owl.carousel.min.js',
+            'lib/jQuery-viewport-checker/dist/jquery.viewportchecker.min.js',
             'lib/magnific-popup/dist/jquery.magnific-popup.min.js',
             // add new css libs
             'js/main.js' // alwayse in the end

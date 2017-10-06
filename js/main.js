@@ -1,5 +1,17 @@
 $(function() {
-    // SPY SCROOL
+
+    // Animation on scroll
+
+    $('.hidden-load').viewportChecker({
+        classToAdd: 'visible animated fadeInUp',
+        classToRemove: 'hidden-load',
+        offset: 50,
+        removeClassAfterAnimation: true
+        // repeat: true
+       });
+
+    // Spy scrolling
+
     // $('.header .nav a').on('click', function(event) {
     //     setTimeout(function() {
     //     $(this).parents('.nav').find('a').removeClass('active');
@@ -18,7 +30,8 @@ $(function() {
         });
     });
 
-    // Smooth Scrooling
+    // Smooth Scroling
+
     $('a[href*="#"]')
         .not('[href="#"]')
         .not('[href="#0"]')
@@ -46,60 +59,37 @@ $(function() {
             }
         });
 
-    // STICKY
+    // STICKY TOPLINE
 
     window.onscroll = function() { scrollFunction() };
 
     function scrollFunction() {
         // if (document.documentElement.scrollTop > ($('.header').height() - $('.topline').height() * 1)) {
-        if (document.documentElement.scrollTop >  $('.topline').height() * 1) {
+        if (document.documentElement.scrollTop > $('.topline').height() * 1) {
             $('.topline').addClass('sticky')
 
-        }else {
+        } else {
             $('.topline').removeClass('sticky')
         }
     }
 
+    // Slider underline first word title
 
-
-    $(".firstWordU").html(function() {
-        var text = $(this).text().trim().split(" ");
+    function firstWordU() {
+        var text = $(".firstWordU").text().trim().split(" ");
         var first = text.shift();
-        return (text.length > 0 ? "<span class='underline'>" + first + "</span> " : first) + text.join(" ");
-    });
 
-
-    // $(".header .nav a,.about .skills i").hover(
-    //     function() {
-    //         $(this).addClass('active');
-    //     },
-    //     function() {
-    //         $(this).removeClass('active');
-    //     }
-    // );
+        $(".firstWordU").html("<span class='underline'>" + first + "</span> " + text.join(" "))
+    }
 
     // HEADER LANGUAGE CHANGE
 
-    $('.header .language').hover(function() {
-        $(this).find('li').not('.selected').show(200);
-    }, function() {
-        $(this).find('li').not('.selected').hide(200);
+    $('.header .language li a').click(function(event) {
+        $(this).parents('.language').find('li').removeClass('selected')
+        $(this).parent('li').addClass('selected')
     });
-    $('.header .language li').on('click', function(event) {
-        event.preventDefault();
-        if ($(this).hasClass('selected')) {
-            $(this).next().hide();
-        } else {
-            $(this).addClass('selected');
-            $(this).prev().removeAttr('class');
-            $(this).insertBefore($(this).prev());
-            $(this).next().hide();
-        }
-    });
-
 
     // OWL RECENT WORKS   
-
 
     var owl = $('.owl-carousel');
     owl.owlCarousel({
@@ -109,10 +99,11 @@ $(function() {
         center: true,
         items: 4,
         startPosition: 3,
+        // pagination: true,
         smartSpeed: 700,
         navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
         responsiveClass: true,
-        onChange: callback,
+        onInitialized: callback,
         responsive: {
             0: { items: 1 },
             480: { items: 2 },
@@ -126,19 +117,27 @@ $(function() {
         }
     });
 
+    // FIRST LOAD
+
+    function callback(event) {
+        var currentItem = event.item.index;
+        var projectImgSm = $(event.target).find(".owl-item").eq(currentItem).find("img").attr('src');
+        var projectTitleSm = $(event.target).find(".owl-item").eq(currentItem).find("h2").text();
+        var projectTitle = $('.project-info').find('h2');
+        var projectImg = $('.project-img img');
+        $(projectTitle).text(projectTitleSm)
+        $(projectImg).attr('src', projectImgSm);
+        firstWordU()
+    }
+
+    //ON CLICK LOAD
+
     owl.on('click', '.owl-item', function(event) {
         var target = $(this).index();
         owl.trigger("to.owl.carousel", [target, 700, true]);
     });
 
-    function callback(event) {
-
-        // console.log("CHANGED")
-    }
-
-
-
-    // Changing text and img in project item
+    // ON CHANGE LOAD
 
     owl.on('changed.owl.carousel', function(event) {
         var currentItem = event.item.index;
@@ -148,32 +147,22 @@ $(function() {
         var projectImg = $('.project-img img');
         $(projectTitle).text(projectTitleSm)
         $(projectImg).attr('src', projectImgSm);
-        // console.log(projectTitleSm)
-        // console.log(projectTitle)
-        // console.log(projectImgSm)
-        // console.log(projectImg)
+        firstWordU()
 
     })
 
-    // $('.project-sm-info').on('click', function(event) {
-    //     var projectTitleSm = $(this).parent().find('h2').text();
-    //     var projectImgSm = $(this).parents('.owl-item').find('img').attr('src');
-    //     var projectTitle = $('.project-info').find('h2');
-    //     var projectImg = $('.project-img img');
-    //     console.log(projectTitleSm)
-    //     console.log(projectTitle)
-    //     console.log(projectImgSm)
-    //     console.log(projectImg)
-    //     $(projectTitle).text(projectTitleSm)
-    //     projectImg.each(function(index, el) {
-    //         if (index == 0) {
-    //             $(el).attr('src', projectImgSm);
-    //         } else {
+    //Owl navigation with keys
 
-    //             $(el).attr('src', projectImgSm.substr(0, projectImgSm.length - 4) + '_' + index + '.jpg');
-    //         }
-    //     });
-    // });
+    $(document.documentElement).keyup(function(event) {
+        if (event.keyCode == 37) {
+            owl.trigger('prev.owl.carousel');
+        } else if (event.keyCode == 39) {
+             owl.trigger('next.owl.carousel');
+        }
+
+    });
+
+    //Big slider images
 
     var data = [
         { src: 'static/img/Projects/project1.jpg' },
@@ -181,6 +170,7 @@ $(function() {
         { src: 'static/img/Projects/project1_2.jpg' }
     ];
 
+    //Popup Big slider
 
     $('.image-popups').magnificPopup({
         type: 'image',
