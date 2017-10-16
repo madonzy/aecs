@@ -59,7 +59,22 @@ body
 	overflow-x: hidden
 	opacity: 1
 	color: #000
-.hidden-load
+
+// .orest
+// 	width: 100px
+// 	height: 100px
+// 	position: relative
+// 	i
+// 		@include boxShadow
+// 		position: absolute
+// 		width: 100%
+// 		text-align: center
+// 		font-size: 28px
+// 		line-height: 100px
+// 		border-radius: 50%
+// 		color: $accent
+
+.hidden-up-load, .hidden-right-load, .hidden-left-load
 	visibility: hidden
 	opacity: 0
 	transition: 0.3s ease
@@ -99,10 +114,10 @@ body
 				font-size: 16px
 				color: #fff
 				padding: 0 8px
+				font-weight: 400
 				a
 					color: #fff
 					line-height: 54px
-					font-weight: 700
 					text-decoration: none
 					transition: 0.3s color ease, 0.3s
 					&:hover
@@ -115,6 +130,7 @@ body
 			li
 				display: inline-block
 				padding: 0 20px
+				border-bottom: 2px solid $accent
 				border-bottom: 2px solid $accent
 				a
 					position: relative
@@ -138,6 +154,33 @@ body
 						border-left: 7px solid transparent
 						border-right: 7px solid transparent
 						border-bottom: 7px solid $accent
+	.bar-icon
+		// border-bottom: 2px solid $accent
+		position: fixed
+		top: 0
+		right: 0
+		z-index: 2
+		display: inline-block
+		width: 115px
+		padding: 10px 40px
+		display: none
+		cursor: pointer
+		transition: 0.3s background-color ease
+		&.sticky
+			background-color: rgba(#2f2d2e, .7)
+		.bar1, .bar2, .bar3 
+			width: 35px
+			height: 3px
+			background-color: #fff
+			margin: 6px 0
+			transition: 0.4s
+		&.change .bar1 
+			transform: rotate(315deg) translate(-7px, 6px) 
+		&.change .bar2
+			opacity: 0
+		&.change .bar3 
+			transform: rotate(-315deg) translate(-6px, -6px) 
+
 	
 	.welcome-wrapper
 		height: 100%
@@ -163,10 +206,10 @@ body
 				line-height: 12rem
 				color: $accent
 			.success
-				font-size: 40px
+				font-size: 2.5rem
 				position: absolute
-				right: 2px
-				top: 115px
+				right: 0.125rem
+				top: 7.2rem
 			.title
 				text-align: right
 				// margin-top: -20px
@@ -290,22 +333,30 @@ body
 	.skills
 		text-align: center
 		margin-top: 80px
-		i
-			@include boxShadow
-			display: inline-block
-			height: 100px
+		.progressbar
 			width: 100px
-			font-size: 28px
-			line-height: 96px
-			color: $accent
-			border: 2px solid $accent
-			border-radius: 50%
-			box-sizing: border-box
-			transition: 0.3s background ease, 0.3s color ease
-			&:hover, &.active
-				color: #fff
-				background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
-				cursor: pointer
+			height: 100px
+			position: relative
+			margin: 0 auto
+			i
+				@include boxShadow
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				text-align: center
+				font-size: 28px
+				line-height: 100px
+				color: $accent
+				border-radius: 50%
+				// color: #fff
+				// background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
+			// box-sizing: border-box
+			// transition: 0.3s background ease, 0.3s color ease
+			// &:hover, &.active
+			// 	color: #fff
+			// 	cursor: pointer
 		h2
 			margin: 0
 			margin-top: 30px
@@ -318,6 +369,13 @@ body
 			font-size: 16px
 			font-weight: 400
 			color: $grey
+.skills-slider 
+	margin: 80px 0	
+	img
+		height: 100px
+		padding: 20px 30px
+		opacity: 0.2
+		filter: grayscale(50%)
 .recent-works
 	margin-bottom: 40px
 	#portfolio-item-selected
@@ -346,6 +404,7 @@ body
 			&:hover::after 
 				opacity: 1
 	.project-info
+		padding: 20px
 		h2
 			color: $dark
 			font-size: 30px
@@ -355,63 +414,84 @@ body
 			.underline
 				@include borderSide($bottom...)
 				padding-bottom: 15px
+		p
+			color: $grey
+			font-size: 18px
+			line-height: 24px
+		ul
+			font-size: 0
+			padding-top: 40px
+			li
+				// font-family: Arial
+				color: $dark
+				padding: 10px 20px 10px 0
+				font-size: 20px
+				line-height: 25px
+				// background-color: green
+				display: inline-block
+				i
+					border-radius: 50%
+					padding: 5px
+					margin-right: 10px
+					border: 2px solid $accent
+					color: $accent
 		
-.owl-carousel
+.owl-carousel.projects-slider
 	padding: 0 80px
+	img
+		// height: 250px
+		// width: 250px
 	.owl-stage
 		padding-bottom: 15px
-.owl-theme .owl-dots .owl-dot
-	span
-		background-color: $grey
-	&.active span, &:hover span 
-		background: $accent
-.owl-theme .owl-nav [class*='owl-']
-	position: absolute
-	top: 50%
-	transform: translateY(-50%)
-	color: $grey
-	background-color: #fff
-	transition: 0.3s color ease
-	i
-		font-size: 50px
-	&.disabled:hover
-		color: $grey
-	&.owl-prev
-		left: 20px
-	&.owl-next	
-		right: 20px
-	&:hover
-		color: $accent
-		background-color: #fff
-.owl-item
-	// max-width: 300px
-	cursor: pointer
-	border: 4px solid #fff
-	transition: .3s
-	&:hover
-		@include boxShadow
-	.project-sm-info
-		position: absolute
-		display: none
-		top: 0
-		left: 0
-		background-color: rgba($dark, .6)
-		width: 100%
-		height: 100%
-		padding-top: 45%
-		text-align: center
-		h2
-			font-size: 36px
-			color: #fff
-			font-weight: bold
-			margin-bottom: 20px
-		
-	&.center
-		border: 4px solid $accent
-		// &:hover :after
-		// 	display: none
+	.owl-item
+		cursor: pointer
+		border: 4px solid #fff
+		transition: .3s
+		&:hover
+			@include boxShadow
 		.project-sm-info
-			display: inline-block
+			position: absolute
+			display: none
+			top: 0
+			left: 0
+			background-color: rgba($dark, .6)
+			width: 100%
+			height: 100%
+			padding-top: 45%
+			text-align: center
+			h2
+				font-size: 36px
+				color: #fff
+				font-weight: bold
+				margin-bottom: 20px
+			
+		&.center
+			border: 4px solid $accent
+			.project-sm-info
+				display: inline-block
+	&.owl-theme .owl-dots .owl-dot
+		span
+			background-color: $grey
+		&.active span, &:hover span 
+			background: $accent
+	&.owl-theme .owl-nav [class*='owl-']
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		color: $grey
+		background-color: #fff
+		transition: 0.3s color ease
+		i
+			font-size: 50px
+		&.disabled:hover
+			color: $grey
+		&.owl-prev
+			left: 20px
+		&.owl-next	
+			right: 20px
+		&:hover
+			color: $accent
+			background-color: #fff
 
 .mfp-zoom-in
 	.mfp-with-anim
@@ -528,5 +608,75 @@ body
 
 				font-weight: 400
 				line-height: 20px
+// FOOTER
+.rights
+	background-color: #0f0f15
+	padding: 40px
+	font-size: 14px
+	color: $grey
+.footer
+	font-size: 0
+	color: #eaeaea
+	background-color: $black
+	padding: 40px 0
+	padding-top: 90px
+	
+	h2
+		color: $accent
+		font-size: 20px
+		font-weight: 700
+		margin-bottom: 20px
+	p
+		margin-bottom: 20px
+		font-size: 14px
+		line-height: 20px
+		color: $grey
+	li, li>a
+		color: $grey
+		font-size: 14px
+		line-height: 20px
+		padding: 5px 0
+		text-decoration: none
+		transition: 0.3s ease color
+		&:hover
+			color: $accent
+		i
+			text-align: center
+			width: 12px
+			font-size: 16px
+			color: $accent
+		a
+			margin-left: 15px
+	i
+		color: $grey
+		font-size: 20px
+		transition: 0.3s ease color
+		padding-right: 10px
+		&:hover
+			color: $accent
+	input
+		display: inline-block
+		border: none
+		outline: none
+		background-color: inherit
+		border-bottom: 1px solid $accent
+		color: $grey
+		line-height: 22px
+		padding: 8px
+	input[type=text]
+		width: 70%
+		display: inline-block
+		margin-bottom: 20px
+	input[type=submit]
+		width: 30%
+		cursor: pointer
+		transition: 0.5s ease background-color, 0.5s ease color
+		&:hover
+			color: #fff
+			background-color: $accent
+	
+
+			
+
 
 @import "media" // alwayse in the END

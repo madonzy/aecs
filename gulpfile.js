@@ -23,6 +23,7 @@ gulp.task('js', function() {
             'lib/owl.carousel/dist/owl.carousel.min.js',
             'lib/jQuery-viewport-checker/dist/jquery.viewportchecker.min.js',
             'lib/magnific-popup/dist/jquery.magnific-popup.min.js',
+            'lib/progressbar.js/dist/progressbar.js',
             // add new css libs
             'js/main.js' // alwayse in the end
         ])

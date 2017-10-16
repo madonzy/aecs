@@ -4,12 +4,124 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
-
+	.header .welcome .text 
+		.num
+			font-size: 10.2rem
+		.percent
+			font-size: 4.25rem
+			line-height: 10.2rem
+		.success
+			top: 6.12rem
+			font-size: 2.125rem
+		.title
+			font-size: 44.4px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.header 
+		.topline 
+			padding: 0
+			height: 100px
+			&.sticky
+				background-color: rgba(#fff, 0)
+			.language, .logo
+				display: none
+			.nav 
+				padding-top: 55px
+				position: fixed
+				top: 0
+				right: -115px
+				background-color:  rgba(#2f2d2e, .7)
+				height: 100%
+				width: 115px
+				transition: 0.3s ease transform
+				li
+					display: block
+					color: #fff
+					text-align: center
+				&.dropdown
+					transform: translateX(-115px)
+					@include boxShadow
+					li:first-child
+						border-top: 2px solid $accent
+
+		.bar-icon
+			display: inline-block
+			z-index: 999
+		.welcome .text
+			text-align: center
+			.num
+				font-size: 14rem
+			.percent
+				font-size: 5.835rem
+				line-height: 14rem
+			.success
+				position: static
+				display: block
+				margin-top: -1.5rem
+				font-size: 3rem
+			.title
+				margin: 20px 0
+				text-align: center
+	.section-title div
+		margin-top: 40px
+	.about 
+		padding-bottom: 50px
+		.avatar img
+			max-width: 100%
+			max-height: 100%
+		.info
+			text-align: center
+			.missions, p
+				font-weight: 400
+				text-align: left
+				font-size: 25px
+			p
+				font-size: 20px
+			h1
+				font-size: 40px
+			.browse
+				font-size: 25px
+		.skills
+			margin-top: 60px
+			h2
+				font-size: 30px
+			p
+				font-size: 25px
+			.progressbar
+				width: 200px
+				height: 200px
+				i
+					font-size: 40px
+					line-height: 200px
+				h2, p 
+				margin-top: 40px
+	.recent-works .project-info 
+		text-align: center
+	.footer
+		padding-top: 0
+		h2
+			margin-top: 60px
+			text-align: center
+			font-size: 40px
+		p
+			font-size: 20px
+			margin: 20px 0
+		ul li
+			i
+				font-size: 22px
+			>a
+				font-size: 20px
+		input[type=text] 
+			width: 30%
+			// margin-left: 25%
+		input[type=submit]
+			width: 20%
+			margin-right: 25%
+		.aecs
+			display: none
+
+	
 
 
 /* Small Devices, Tablets */

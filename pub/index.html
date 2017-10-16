@@ -38,25 +38,29 @@
 
 <body>
     <div id="home" class="header target">
-        <div class="topline hidden-load">
+           <div class="bar-icon">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+</div>
+        <div class="topline hidden-up-load">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 logo">
-
-                    <a href="#home"><img src="static/img/logo2.svg" alt="logo"></a>
+                    <div class="col-sm-2 logo">
+                        <a href="#home"><img src="static/img/logo2.svg" alt="logo"></a>
                     </div>
-                    <div class="col-md-10 clearfix">
+                    <div class="col-sm-10 clearfix">
                         <ul class="language">
                             <li class="selected" data-lang="en"><a href="#">EN</a></li>
                             <li>/</li>
                             <li data-lang="pl"><a href="#">PL</a></li>
                         </ul>
-                        <ul class="nav">
+                        <ul class="nav clearfix">
                             <li><a href="#home" class="active">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#our-team">Our Team</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +69,8 @@
         <div class="container welcome-wrapper">
             <div class="row welcome-wrapper">
                 <div class="col-md-push-6 col-md-6 welcome">
-                    <div class="text animated fadeInRight">
-                        <div class="num">100
+                    <div class="text hidden-right-load">
+                        <div class="num"><span class="counter" data-count="100">75</span>
                             <span class="percent">%</span>
                             <span class="success">Success</span>
                         </div>
@@ -80,55 +84,61 @@
     <div id="about" class="about target">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 section-title hidden-load">
+                <div class="col-md-12 section-title hidden-up-load">
                     <div><a href="#about">About Us</a></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 avatar hidden-load">
+                <div class="col-md-6 avatar hidden-left-load">
                     <img src="static/img/avatarka1.jpg" alt="avatarka">
                 </div>
                 <div class="col-md-6 info">
-                    <h1 class="hidden-load"><span>Hello!</span> We’re a Creative Agency</h1>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ipsum illo voluptatum ratione nemo nobis in unde culpa! Sed temporibus ducimus qui possimus excepturi, repellat facilis, aspernatur mollitia nulla, accusantium voluptatum, velit soluta. Id deleniti soluta repudiandae optio quod pariatur eius cum totam excepturi nihil ab maxime tempore atque autem, perspiciatis accusamus dicta, molestiae odit reprehenderit laudantium eligendi. Delectus porro magnam aut cupiditate harum, architecto corporis laborum doloribus temporibus, quos.</p>
-                    <div class="missions hidden-load">
-                        <span class="hidden-load">Mission</span> - we deliver uniqueness and quality
+                    <h1 class="hidden-right-load"><span>Hello!</span> We’re a Creative Agency</h1>
+                    <p class="hidden-right-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ipsum illo voluptatum ratione nemo nobis in unde culpa! Sed temporibus ducimus qui possimus excepturi, repellat facilis, aspernatur mollitia nulla, accusantium voluptatum, velit soluta. Id deleniti soluta repudiandae optio quod pariatur eius cum totam excepturi nihil ab maxime tempore atque autem, perspiciatis accusamus dicta, molestiae odit reprehenderit laudantium eligendi. Delectus porro magnam aut cupiditate harum, architecto corporis laborum doloribus temporibus, quos.</p>
+                    <div class="missions hidden-right-load">
+                        <span class="hidden-right-load">Mission</span> - we deliver uniqueness and quality
                         <br>
-                        <span class="hidden-load">Skills</span> - delivering fast and excellent results
+                        <span class="hidden-right-load">Skills</span> - delivering fast and excellent results
                         <br>
-                        <span class="hidden-load">Clients</span> - satisfied clients thanks to our experience
+                        <span class="hidden-right-load">Clients</span> - satisfied clients thanks to our experience
                         <br>
                     </div>
-                    <a href="#" class="browse hidden-load"><i class="fa fa-folder" aria-hidden="true"></i>Browse our works</a>
+                    <a href="#portfolio" class="browse hidden-right-load"><i class="fa fa-folder" aria-hidden="true"></i>Browse our works</a>
                 </div>
             </div>
             <div class="row ">
-                <div class="col-md-4 skills hidden-load">
-                    <i class="fa fa-camera" aria-hidden="true"></i>
-                    <h2 class="hidden-load">Photography</h2>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                <div class="col-md-4 skills hidden-up-load">
+                    <div class="progressbar hidden-up-load">
+                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="hidden-up-load">Perfect Design</h2>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
                 </div>
-                <div class="col-md-4 skills hidden-load">
-                    <i class="fa fa-desktop" aria-hidden="true"></i>
-                    <h2 class="hidden-load">Web Design</h2>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                <div class="col-md-4 skills hidden-up-load">
+                    <div class="progressbar hidden-up-load">
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="hidden-up-load">Web Development</h2>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
                 </div>
-                <div class="col-md-4 skills hidden-load">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
-                    <h2 class="hidden-load">Marketing</h2>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
+                <div class="col-md-4 skills hidden-up-load">
+                    <div class="progressbar hidden-up-load">
+                        <i class="fa  fa-user" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="hidden-up-load">Outstanding Support</h2>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore illum, enim architecto soluta rerum consequuntur?</p>
                 </div>
             </div>
         </div>
     </div>
     <div id="portfolio" class="container recent-works target">
         <div class="row">
-            <div class="col-md-12 section-title  hidden-load">
+            <div class="col-md-12 section-title  hidden-up-load">
                 <div><a href="#portfolio">Recent works</a></div>
             </div>
         </div>
         <div class="row" id="portfolio-item-selected">
-            <div  class="col-md-6 project-img hidden-load">
+            <div class="col-md-6 project-img hidden-left-load">
                 <a href="#0" class="image-popups" data-effect="mfp-zoom-in">
                     <div>
                         <img src="" alt="Project1">
@@ -136,12 +146,20 @@
                 </a>
             </div>
             <div class="col-md-6 project-info">
-                <h2 class="firstWordU hidden-load"></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo est autem non ullam nostrum, doloremque modi in cumque corporis molestiae animi quidem adipisci accusamus expedita suscipit sunt eius perferendis sapiente debitis a. Architecto repudiandae facilis amet debitis quibusdam quasi saepe! Ut ratione, iusto voluptatum numquam quis! Harum, deleniti, ipsa officia voluptates tempora aperiam perferendis esse odio facere, doloremque at blanditiis! Vero eaque totam, vel perferendis temporibus laudantium ea porro, in ex blanditiis sunt corporis velit laboriosam incidunt illum. Ducimus ea, praesentium sint, repudiandae alias animi eligendi vel eaque tempora laborum, qui ipsum molestias mollitia deserunt error a ut tenetur perferendis exercitationem quas, provident excepturi dolor harum repellat! Nulla temporibus doloremque nostrum laboriosam quibusdam molestias nobis adipisci amet ipsa laborum debitis ducimus maxime, eveniet consequatur perferendis reprehenderit animi eum ullam saepe, deleniti quaerat harum optio a consectetur? Eum totam quis in omnis consequatur officiis dolorum inventore possimus unde quo neque, eius, illum obcaecati maiores vel nostrum harum non est dolore earum assumenda, quaerat ipsam. Eos, maxime, officia? Facilis, fugiat officia qui, reprehenderit at soluta nemo dolorem tenetur illum sunt aut quos eligendi dolore saepe excepturi a magnam, aspernatur necessitatibus. Accusantium deserunt pariatur, enim molestias doloremque facilis sit consectetur voluptas, mollitia sint quo. Illum eveniet, ullam porro dolore no</p>
+                <h2 class="firstWordU hidden-right-load"></h2>
+                <p class="hidden-right-load">AECS is an innovative application packed with interesting information and relevant tips on traveling all around the world. All articles featured on the website are written by its users—open-minded people hungry for adventures with their heads full of remarkable ideas—who are eager to share their own experiences with other travelers, helping them to start their own journeys. The project is based on WordPress and pure PHP. Bootstrap, CSS3, HTML5, and jQuery were used to build the front-end phase.</p>
+                <ul class="technologies hidden-right-load">
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>Bootstrap</li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>CSS3</li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>HTML5</li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i>PHP</li>
+                    <!-- <li> <i class="fa fa-check" aria-hidden="true"></i>WordPress</li> -->
+                    <!-- <li> <i class="fa fa-check" aria-hidden="true"></i>JQuery</li> -->
+                </ul>
             </div>
         </div>
     </div>
-    <section class="owl-carousel owl-theme">
+    <section class="owl-carousel projects-slider owl-theme">
         <div>
             <a href="#portfolio-item-selected">
             <img src="static/img/Projects/project6.jpg">
@@ -201,13 +219,13 @@
     </section>
     <div id="our-team" class="container our-team target">
         <div class="row">
-            <div class="col-md-12 section-title hidden-load">
+            <div class="col-md-12 section-title hidden-up-load">
                 <div><a href="#our-team">Our Team</a></div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 employee clearfix">
-                <div class="employee-img hidden-load">
+                <div class="employee-img hidden-up-load">
                     <img src="static/img/Employees/person1.jpg" alt="employee-img">
                     <div class="contacts">
                         <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -216,13 +234,13 @@
                     </div>
                 </div>
                 <div class="employee-info">
-                    <h2 class="hidden-load">Elizabeth Bennet</h2>
-                    <span class="hidden-load">Graphic Designer</span>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores sapiente, suscipit exercitationem id molestias sed vitae at nemo sit deserunt hic reiciendis et porro voluptate ducimus earum voluptas aut omnis.</p>
+                    <h2 class="hidden-up-load">Elizabeth Bennet</h2>
+                    <span class="hidden-up-load">Graphic Designer</span>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores sapiente, suscipit exercitationem id molestias sed vitae at nemo sit deserunt hic reiciendis et porro voluptate ducimus earum voluptas aut omnis.</p>
                 </div>
             </div>
             <div class="col-md-6 employee clearfix">
-                <div class="employee-img hidden-load">
+                <div class="employee-img hidden-up-load">
                     <img src="static/img/Employees/person2.jpg" alt="employee-img">
                     <div class="contacts">
                         <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -231,13 +249,13 @@
                     </div>
                 </div>
                 <div class="employee-info">
-                    <h2 class="hidden-load">Leon Pesner</h2>
-                    <span class="hidden-load">Graphic Designer</span>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto ducimus asperiores distinctio commodi quam, eligendi neque, accusamus cum nihil, dolore, porro quaerat architecto veniam unde. Molestiae, aspernatur. Rem sunt, sequi.</p>
+                    <h2 class="hidden-up-load">Leon Pesner</h2>
+                    <span class="hidden-up-load">Graphic Designer</span>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto ducimus asperiores distinctio commodi quam, eligendi neque, accusamus cum nihil, dolore, porro quaerat architecto veniam unde. Molestiae, aspernatur. Rem sunt, sequi.</p>
                 </div>
             </div>
             <div class="col-md-6 employee clearfix">
-                <div class="employee-img hidden-load">
+                <div class="employee-img hidden-up-load">
                     <img src="static/img/Employees/person3.jpg" alt="employee-img">
                     <div class="contacts">
                         <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -246,13 +264,13 @@
                     </div>
                 </div>
                 <div class="employee-info">
-                    <h2 class="hidden-load">Irma Rosse</h2>
-                    <span class="hidden-load">Graphic Designer</span>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a hic totam rem cum quia distinctio quam eos adipisci et cumque esse asperiores doloribus, obcaecati, tempora saepe optio vel!</p>
+                    <h2 class="hidden-up-load">Irma Rosse</h2>
+                    <span class="hidden-up-load">Graphic Designer</span>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus impedit a hic totam rem cum quia distinctio quam eos adipisci et cumque esse asperiores doloribus, obcaecati, tempora saepe optio vel!</p>
                 </div>
             </div>
             <div class="col-md-6 employee clearfix">
-                <div class="employee-img hidden-load">
+                <div class="employee-img hidden-up-load">
                     <img src="static/img/Employees/person4.jpg" alt="employee-img">
                     <div class="contacts">
                         <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -261,9 +279,62 @@
                     </div>
                 </div>
                 <div class="employee-info">
-                    <h2 class="hidden-load">September Pursel</h2>
-                    <span class="hidden-load">Graphic Designer</span>
-                    <p class="hidden-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat inventore cum expedita cumque accusamus quae dolore! Dignissimos fugiat cupiditate adipisci facilis reprehenderit cum error repellendus excepturi, ipsum, distinctio, iusto nam.</p>
+                    <h2 class="hidden-up-load">September Pursel</h2>
+                    <span class="hidden-up-load">Graphic Designer</span>
+                    <p class="hidden-up-load">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat inventore cum expedita cumque accusamus quae dolore! Dignissimos fugiat cupiditate adipisci facilis reprehenderit cum error repellendus excepturi, ipsum, distinctio, iusto nam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="owl-carousel owl-theme skills-slider hidden-up-load">
+        <img src="static/img/skills/bootstrap.svg">
+        <img src="static/img/skills/git.svg">
+        <img src="static/img/skills/java.svg">
+        <img src="static/img/skills/jquery.svg">
+        <img src="static/img/skills/less.svg">
+        <img src="static/img/skills/magento.svg">
+        <img src="static/img/skills/mysql.svg">
+        <img src="static/img/skills/php.svg">
+        <img src="static/img/skills/sass.svg">
+        <img src="static/img/skills/susy.svg">
+        <img src="static/img/skills/symfony.svg">
+        <img src="static/img/skills/wordpress-icon.svg">
+        <img src="static/img/skills/zend-framework.svg">
+    </div>
+    <div class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>About us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In perferendis nihil ea id illum voluptatem totam at quae, harum a, voluptas, assumenda, eum facilis ipsum fugit odit dolorem magni mollitia?</p>
+                    <ul>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <a href="mailto:conservate@washingtonian.com">conservate@washingtonian.com</a>
+                        </li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i><a href="#0">+48 123 456 789</a></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="#0">ul. Generała Bema Józefa 104 47-400 Racibórz</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h2>Keep in touch</h2>
+                    <input type="text" name="email" placeholder="Your e-mail please">
+                    <input type="submit" name="submit" value="GO!">
+                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-md-4 aecs">
+                    <h2>Advanced E-commerce Solutions</h2>
+                    <a href="#home"><img src="static/img/logo2.svg" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rights">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>&copy;  2017 AECS All rights reserved</h4>
                 </div>
             </div>
         </div>
