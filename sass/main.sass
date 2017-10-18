@@ -40,13 +40,6 @@ $bottom: 0px solid $accent, 2px, 100%, -5px, 0, 3px solid $accent
 *:focus
 	outline: none
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
 html, body
 	height: 100%
 
@@ -58,30 +51,11 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
-	color: #000
-
-// .orest
-// 	width: 100px
-// 	height: 100px
-// 	position: relative
-// 	i
-// 		@include boxShadow
-// 		position: absolute
-// 		width: 100%
-// 		text-align: center
-// 		font-size: 28px
-// 		line-height: 100px
-// 		border-radius: 50%
-// 		color: $accent
+	color: #FFF
 
 .hidden-up-load, .hidden-right-load, .hidden-left-load
 	visibility: hidden
-	opacity: 0
-	transition: 0.3s ease
 .visible
-	animation-duration: 1s
-	opacity: 1
-	animation-delay: 0
 	visibility: visible
 //Header
 .header
@@ -104,7 +78,7 @@ body
 		.logo 
 			font-size: 0
 			img
-				height: 54px
+				height: 53px
 		.language
 			float: right
 			margin-left: 40px
@@ -126,7 +100,7 @@ body
 					color: $accent
 		.nav
 			float: right
-			font-size: 0px
+			font-size: 0
 			li
 				display: inline-block
 				padding: 0 20px
@@ -155,12 +129,10 @@ body
 						border-right: 7px solid transparent
 						border-bottom: 7px solid $accent
 	.bar-icon
-		// border-bottom: 2px solid $accent
 		position: fixed
 		top: 0
 		right: 0
 		z-index: 2
-		display: inline-block
 		width: 115px
 		padding: 10px 40px
 		display: none
@@ -212,7 +184,6 @@ body
 				top: 7.2rem
 			.title
 				text-align: right
-				// margin-top: -20px
 				display: block
 				width: 100%
 				font-size: 54px
@@ -268,8 +239,7 @@ body
 		margin-bottom: 80px
 		font-size: 50px
 		font-weight: 700
-		background-color: $accent
-		background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
+		background: $accent  linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
 		transform: rotate(355deg)
 		a
 			display: inline-block
@@ -300,14 +270,12 @@ body
 				@include borderSide($bottom...)
 				padding-bottom: 15px
 		p
-			margin: 0
-			margin-bottom: 45px
+			margin: 0 0 45px 0
 			color: $grey
 			font-weight: 700
 			line-height: 25px
 		.missions
-			margin: 0
-			margin-bottom: 45px
+			margin: 0 0 45px 0
 			@include borderSide($left...)
 			left: 2px
 			padding-left: 15px
@@ -350,22 +318,13 @@ body
 				line-height: 100px
 				color: $accent
 				border-radius: 50%
-				// color: #fff
-				// background: linear-gradient(to bottom right, lighten($accent, 5%) 50%, $accent 50%)
-			// box-sizing: border-box
-			// transition: 0.3s background ease, 0.3s color ease
-			// &:hover, &.active
-			// 	color: #fff
-			// 	cursor: pointer
 		h2
-			margin: 0
-			margin-top: 30px
+			margin: 30px 0 0 0
 			font-size: 20px
 			font-weight: 700
 			color: $dark
 		p
-			margin: 0
-			margin-top: 30px
+			margin: 30px 0 0 0
 			font-size: 16px
 			font-weight: 400
 			color: $grey
@@ -409,8 +368,7 @@ body
 			color: $dark
 			font-size: 30px
 			font-weight: 700
-			margin: 0
-			margin-bottom: 60px
+			margin: 0 0 60px 0
 			.underline
 				@include borderSide($bottom...)
 				padding-bottom: 15px
@@ -420,7 +378,7 @@ body
 			line-height: 24px
 		ul
 			font-size: 0
-			padding-top: 40px
+			padding-top: 20px
 			li
 				// font-family: Arial
 				color: $dark
@@ -438,9 +396,6 @@ body
 		
 .owl-carousel.projects-slider
 	padding: 0 80px
-	img
-		// height: 250px
-		// width: 250px
 	.owl-stage
 		padding-bottom: 15px
 	.owl-item
@@ -577,7 +532,6 @@ body
 					background-color: $accent
 					width: 40px
 					text-align: center
-					font-family: FontAwesome
 					font-size: 14px
 					line-height: 40px
 					margin: 0 5px
@@ -612,14 +566,13 @@ body
 .rights
 	background-color: #0f0f15
 	padding: 40px
-	font-size: 14px
+	font-size: 18px
 	color: $grey
 .footer
 	font-size: 0
 	color: #eaeaea
 	background-color: $black
-	padding: 40px 0
-	padding-top: 90px
+	padding: 90px 0 40px 0
 	
 	h2
 		color: $accent
@@ -647,33 +600,39 @@ body
 			color: $accent
 		a
 			margin-left: 15px
-	i
-		color: $grey
-		font-size: 20px
-		transition: 0.3s ease color
-		padding-right: 10px
-		&:hover
-			color: $accent
-	input
-		display: inline-block
-		border: none
-		outline: none
-		background-color: inherit
-		border-bottom: 1px solid $accent
-		color: $grey
-		line-height: 22px
-		padding: 8px
-	input[type=text]
-		width: 70%
-		display: inline-block
-		margin-bottom: 20px
-	input[type=submit]
-		width: 30%
-		cursor: pointer
-		transition: 0.5s ease background-color, 0.5s ease color
-		&:hover
-			color: #fff
-			background-color: $accent
+	.aecs
+		img
+			text-align: center
+			width: 100px
+	.keep-in
+		i
+			color: $grey
+			font-size: 20px
+			transition: 0.3s ease color
+			padding-right: 10px
+			&:hover
+				color: $accent
+		input
+			border-radius: 0
+			display: inline-block
+			border: none
+			outline: none
+			background-color: inherit
+			border-bottom: 1px solid $accent
+			color: $grey
+			line-height: 22px
+			padding: 8px
+		input[type=text]
+			width: 70%
+			display: inline-block
+			margin-bottom: 20px
+		input[type=submit]
+			width: 30%
+			cursor: pointer
+			transition: 0.5s ease background-color, 0.5s ease color
+			&:hover
+				color: #fff
+				background-color: $accent
 	
 
 			

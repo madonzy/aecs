@@ -278,12 +278,11 @@ $(function() {
         autoplayTimeout: 5000,
         responsiveClass: true,
         autoplay: true,
-        // autoplayHoverPause: true,
         responsive: {
-            0: { items: 2 },
-            480: { items: 4 },
+            0: { items: 3 },
+            480: { items: 5 },
             980: {
-                items: 6
+                items: 7
             },
             1440: {
                 items: 10
