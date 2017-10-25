@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     del = require('del'),
-    // imagemin = require('gulp-imagemin'),
+    imagemin = require('gulp-imagemin'),
     // imageop = require('gulp-image-optimization'),
     image = require('gulp-image'),
     cache = require('gulp-cache'),
@@ -64,7 +64,7 @@ gulp.task('sass', function() {
 
 // Watcher
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'js', 'browser-sync', 'imagemin'], function() {
     gulp.watch('sass/**/*.sass', ['sass']);
     gulp.watch(['lib/**/*.js', 'js/main.js'], ['js']);
     gulp.watch('pub/*.html', browserSync.reload);
@@ -77,8 +77,8 @@ gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 
 gulp.task('imagemin', function() {
     return gulp.src('img/**/*')
-        // .pipe(imagemin())
-        .pipe(image())
+        .pipe(imagemin())
+        // .pipe(image())
         .pipe(gulp.dest('pub/static/img'));
 });
 gulp.task('fonts', function() {
@@ -89,7 +89,7 @@ gulp.task('fonts', function() {
 
 // THE END
 
-gulp.task('build', ['remove', 'sass', 'js', 'fonts'], function() {
+gulp.task('build', ['remove', 'imagemin', 'sass', 'js', 'fonts'], function() {
 
 
 });
