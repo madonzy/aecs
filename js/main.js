@@ -161,6 +161,7 @@ $(function() {
     $('.header .language li a').click(function(event) {
         $(this).parents('.language').find('li').removeClass('selected')
         $(this).parent('li').addClass('selected')
+        event.preventDefault();
     });
 
     // OWL RECENT WORKS   
