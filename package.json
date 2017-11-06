@@ -26,8 +26,13 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-wait": "0.0.2",
+    "jpegoptim-bin": "^3.0.0",
     "merge-stream": "^1.0.1",
     "npm-check-updates": "^2.13.0",
     "vinyl-ftp": "^0.6.0"
+  },
+  "dependencies": {
+    "jpegoptim-bin": "^3.0.0",
+    "mozjpeg": "^4.1.1"
   }
 }

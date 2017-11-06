@@ -77,7 +77,7 @@ gulp.task('watch', ['sass', 'js', 'browser-sync', 'imagemin'], function() {
 
 gulp.task('imagemin', function() {
     return gulp.src('img/**/*')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         // .pipe(image())
         .pipe(gulp.dest('pub/static/img'));
 });
